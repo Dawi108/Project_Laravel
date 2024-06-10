@@ -21,9 +21,9 @@ use App\Http\Controllers\Auth\BookController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 Route::get('/dashboard', function () {
@@ -53,7 +53,7 @@ Route::post('/student/store', [StudentController::class, 'store'])->name('studen
 
 
 Route::get('/education', function () {
-    return view('auth.education-qualification');
+    return view('auth.education');
 })->name('education');
 
 Route::get('/education/create', [StudentController::class, 'create'])->name('education.create');
@@ -68,17 +68,17 @@ Route::get('faculty/create', [FacultyController::class, 'create'])->name('facult
 Route::post('faculty/store', [FacultyController::class, 'store'])->name('faculty.store');
 
 
-Route::get('/books', function () {
-    return view('auth.books');
-})->name('books');
+Route::get('/book', function () {
+    return view('auth.book');
+})->name('book');
 
 Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
 Route::post('/books/store', [BookController::class, 'store'])->name('books.store');
 
 
-Route::get('/publications', function () {
-    return view('auth.publications');
-})->name('publications');
+Route::get('/publication', function () {
+    return view('auth.publication');
+})->name('publication');
 
 Route::get('/publications/create', [PublicationController::class, 'create'])->name('publications.create');
 Route::post('/publications/store', [PublicationController::class, 'store'])->name('publications.store');

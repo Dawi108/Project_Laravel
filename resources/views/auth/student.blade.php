@@ -37,13 +37,15 @@
         <div>
             <x-input-label for="dob" :value="__('Date of Birth')" />
             <div class="flex space-x-2"> <!-- Flex container to hold multiple input fields -->
-                <x-input id="day" class="block mt-1 w-full" type="number" min="1" max="31" name="day" :value="old('day')" required autofocus />
-                <x-input id="month" class="block mt-1 w-full" type="number" min="1" max="12" name="month" :value="old('month')" required />
                 <x-input id="year" class="block mt-1 w-full" type="number" min="1950" max="{{ date('Y') }}" name="year" :value="old('year')" required />
+                <x-input id="month" class="block mt-1 w-full" type="number" min="1" max="12" name="month" :value="old('month')" required />
+                <x-input id="day" class="block mt-1 w-full" type="number" min="1" max="31" name="day" :value="old('day')" required autofocus />
+
             </div>
-            <x-input-error :messages="$errors->get('day')" class="mt-2" />
-            <x-input-error :messages="$errors->get('month')" class="mt-2" />
             <x-input-error :messages="$errors->get('year')" class="mt-2" />
+            <x-input-error :messages="$errors->get('month')" class="mt-2" />
+            <x-input-error :messages="$errors->get('day')" class="mt-2" />
+
         </div>
         
         
@@ -62,8 +64,8 @@
         
         {{-- admission year --}}
         <div>
-            <x-input-label for="year" :value="__('Admission Year')" />
-            <select id="year" name="year" class="block mt-1 w-full" required>
+            <x-input-label for="admission_year" :value="__('Admission Year')" />
+            <select id="admission_year" name="admission_year" class="block mt-1 w-full" required>
                 <option value="">Select Year</option>
                 @php
                     $currentYear = date('Y');
@@ -148,7 +150,7 @@
 
         <div class="mb-4">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Submit
+                Next
             </button>
         </div>
     </div>   

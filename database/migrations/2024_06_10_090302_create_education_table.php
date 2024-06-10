@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('education', function (Blueprint $table) {
             $table->id();
             $table->string('degree');
-            $table->decimal('percentage', 3, 2);
+            $table->float('percentage');
             $table->string('school_name');
             $table->string('university_name');
             $table->string('rollno');

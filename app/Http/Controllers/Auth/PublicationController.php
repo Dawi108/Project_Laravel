@@ -13,24 +13,36 @@ class PublicationController extends Controller
 {
     public function create(): view
     {
-        return view('auth.publications');
+        return view('auth.publication');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'type' => 'required|string',
-            'level' => 'required|string',
-            'indexing' => 'nullable|string',
-            'doi' => 'nullable|string',
-            'publisher' => 'required|string|max:255',
-            'month' => 'required|string|max:255',
-            'year' => 'required|integer',
+            'title' => ['required', 'string', 'max:255'],
+            'type' => ['required', 'string'],
+            'level' => ['required', 'string'],
+            'indexing' => ['nullable', 'string'],
+            'doi' => ['nullable', 'string'],
+            'publisher' => ['required', 'string', 'max:255'],
+            'month' => ['required', 'string', 'max:255'],
+            'year' => ['required', 'integer'],
         ]);
 
-        Publication::create($request->all());
+        $publication = new Publication();
+        $publication->title = $request->title;
+        $publication->type = $request->type;
+        $publication->level = $request->level;
+        $publication->indexing = $request->indexing;
+        $publication->doi = $request->doi;
+        $publication->publisher = $request->publisher;
+        $publication->month = $request->month;
+        $publication->year = $request->year;
+        $publication->save();
 
-        return redirect()->route('publications.create')->with('success', 'Publication created successfully.');
+
+
+
+        return redirect()->route('welcome');
     }
 }

@@ -18,7 +18,7 @@ class Student extends Model
         'Lname',
         'dob',
         'gender',
-        'year',
+        'admission_year',
         'cast_category',
         'address',
         'email',

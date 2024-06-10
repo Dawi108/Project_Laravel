@@ -6,7 +6,7 @@
             @csrf
             <div class="mb-4">
                 <label for="title" class="block text-white font-bold mb-2">Title</label>
-                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" id="title" name="title" placeholder="Enter title" required>
+                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500" id="title" name="title" placeholder="Enter title" required>
             </div>
             <div class="mb-4">
                 <label for="type" class="block text-white font-bold mb-2">Type</label>
@@ -27,23 +27,23 @@
             </div>
             <div class="mb-4">
                 <label for="indexing" class="block text-white font-bold mb-2">Indexing</label>
-                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" id="indexing" name="indexing" placeholder="Enter indexing">
+                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500" id="indexing" name="indexing" placeholder="Enter indexing">
             </div>
             <div class="mb-4">
                 <label for="doi" class="block text-white font-bold mb-2">DOI</label>
-                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" id="doi" name="doi" placeholder="Enter DOI">
+                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500" id="doi" name="doi" placeholder="Enter DOI">
             </div>
             <div class="mb-4">
                 <label for="publisher" class="block text-white font-bold mb-2">Publisher</label>
-                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" id="publisher" name="publisher" placeholder="Enter publisher" required>
+                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500" id="publisher" name="publisher" placeholder="Enter publisher" required>
             </div>
             <div class="mb-4">
                 <label for="month" class="block text-white font-bold mb-2">Month</label>
-                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" id="month" name="month" placeholder="Enter month" required>
+                <input type="text" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500" id="month" name="month" placeholder="Enter month" required>
             </div>
             <div class="mb-4">
                 <label for="year" class="block text-white font-bold mb-2">Year</label>
-                <input type="number" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" id="year" name="year" placeholder="Enter year" required>
+                <input type="number" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500" id="year" name="year" placeholder="Enter year" required>
             </div>
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
         </form>

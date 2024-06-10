@@ -20,17 +20,25 @@ class FacultyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|regex:/^[a-zA-Z0-9._%+-]+@hpcu\.ac\.in$/|unique:faculty,email',
-            'number' => 'required|string|regex:/^\d{10}$/',
-            'gender' => 'required|in:male,female,others',
-            'teaching_experience' => 'required|integer|min:0',
-            'designation' => 'required|string|max:255',
-            'specialization' => 'required|string|max:255',
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'regex:/^[a-zA-Z0-9._%+-]+@hpcu\.ac\.in$/'],
+            'mobile' => ['required', 'string', 'regex:/^\d{10}$/'],
+            'gender' => ['required', 'in:male,female,others'],
+            'teaching_experience' => ['required', 'integer', 'min:0'],
+            'designation' => ['required', 'string', 'max:255'],
+            'specialization' => ['required', 'string', 'max:255'],
         ]);
 
-        Faculty::create($request->all());
+        $faculty = new Faculty();
+        $faculty->name = $request->name;
+        $faculty->email = $request->email;
+        $faculty->mobile = $request->mobile;
+        $faculty->gender = $request->gender;
+        $faculty->teaching_experience = $request->teaching_experience;
+        $faculty->designation = $request->designation;
+        $faculty->specialization = $request->specialization;
+        $faculty->save();
 
-        return redirect()->route('faculty.create')->with('success', 'Faculty information saved successfully.');
+        return redirect()->route('welcome');
     }
 }

@@ -22,7 +22,7 @@
 
                 {{-- School/Board/University Name --}}
                 <div>
-                    <x-input-label for="school_name" :value="__('School/Board/University Name')" />
+                    <x-input-label for="school_name" :value="__('School Name')" />
                     <x-text-input id="school_name" class="block mt-1 w-full" type="text" name="school_name" :value="old('school_name')" required autofocus autocomplete="school-name" />
                     <x-input-error :messages="$errors->get('school_name')" class="mt-2" />
                 </div>

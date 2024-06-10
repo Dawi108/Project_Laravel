@@ -11,12 +11,12 @@ class Education extends Model
 
     protected $table = 'education';
 
-    // protected $fillable = [
-    //     'degree',
-    //     'percentage',
-    //     'school_name',
-    //     'university_name',
-    //     'rollno',
-    //     'certificate_no',
-    // ];
+    protected $fillable = [
+        'degree',
+        'percentage',
+        'school_name',
+        'university_name',
+        'rollno',
+        'certificate_no',
+    ];
 }

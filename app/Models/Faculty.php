@@ -12,7 +12,7 @@ class Faculty extends Model
     protected $fillable = [
         'name',
         'email',
-        'number',
+        'mobile',
         'gender',
         'teaching_experience',
         'designation',
