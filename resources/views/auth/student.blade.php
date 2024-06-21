@@ -22,7 +22,7 @@
         {{-- Mname --}}
         <div>
             <x-input-label for="Mname" :value="__('Middle Name')" />
-            <x-text-input id="Mname" class="block mt-1 w-full" type="text" name="Mname" :value="old('Mname')" required autofocus autocomplete="Mname" />
+            <x-text-input id="Mname" class="block mt-1 w-full" type="text" name="Mname" :value="old('Mname')"  />
             <x-input-error :messages="$errors->get('Mname')" class="mt-2" />
         </div>
 
@@ -37,9 +37,9 @@
         <div>
             <x-input-label for="dob" :value="__('Date of Birth')" />
             <div class="flex space-x-2"> <!-- Flex container to hold multiple input fields -->
-                <x-input id="year" class="block mt-1 w-full" type="number" min="1950" max="{{ date('Y') }}" name="year" :value="old('year')" required />
-                <x-input id="month" class="block mt-1 w-full" type="number" min="1" max="12" name="month" :value="old('month')" required />
-                <x-input id="day" class="block mt-1 w-full" type="number" min="1" max="31" name="day" :value="old('day')" required autofocus />
+                <x-input id="year" class="block mt-1 w-full" type="number" min="1950" max="{{ date('Y') }}" name="year" :value="old('year')" placeholder="YYYY" required />
+                <x-input id="month" class="block mt-1 w-full" type="number" min="1" max="12" name="month" :value="old('month')" required placeholder="MM"/>
+                <x-input id="day" class="block mt-1 w-full" type="number" min="1" max="31" name="day" :value="old('day')" placeholder="DD" required autofocus />
 
             </div>
             <x-input-error :messages="$errors->get('year')" class="mt-2" />

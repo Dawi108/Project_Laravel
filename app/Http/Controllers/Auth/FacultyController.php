@@ -41,4 +41,9 @@ class FacultyController extends Controller
 
         return redirect()->route('welcome');
     }
+    public function index()
+    {
+        $students = Student::all();
+        return view('faculty.index', compact('students'));
+    }
 }

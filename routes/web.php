@@ -7,7 +7,7 @@ use App\Http\Controllers\Auth\EducationController;
 use App\Http\Controllers\Auth\FacultyController;
 use App\Http\Controllers\Auth\PublicationController;
 use App\Http\Controllers\Auth\BookController;
-
+use App\Http\Controllers\Auth\FQuestionController;
 
 
 /*
@@ -56,9 +56,8 @@ Route::get('/education', function () {
     return view('auth.education');
 })->name('education');
 
-Route::get('/education/create', [StudentController::class, 'create'])->name('education.create');
+Route::get('/education/create', [EducationController::class, 'create'])->name('education.create');
 Route::post('/education/store', [EducationController::class, 'store'])->name('education.store');
-
 
 Route::get('/faculty', function () {
     return view('auth.faculty');
@@ -67,6 +66,11 @@ Route::get('/faculty', function () {
 Route::get('faculty/create', [FacultyController::class, 'create'])->name('faculty.create');
 Route::post('faculty/store', [FacultyController::class, 'store'])->name('faculty.store');
 
+Route::get('/fquestion', function () {
+    return view('auth.fquestion');
+})->name('fquestion');
+Route::get('fquestion/create', [FQuestionController::class, 'create'])->name('fquestion.create');
+Route::post('/fquestion/store', [FQuestionController::class, 'store'])->name('fquestion.store');
 
 Route::get('/book', function () {
     return view('auth.book');
@@ -84,6 +88,13 @@ Route::get('/publications/create', [PublicationController::class, 'create'])->na
 Route::post('/publications/store', [PublicationController::class, 'store'])->name('publications.store');
 
 
+Route::get('/administrator', function () {
+    return view('auth.administrator');
+})->name('administrator');
+
+Route::get('/administrator/create', [PublicationController::class, 'create'])->name('administrator.create');
+Route::post('/administrator/store', [PublicationController::class, 'store'])->name('administrator.store');
 
 
+Route::get('/sprofile/{rollno}', [StudentController::class, 'show'])->name('sprofile.show');
 

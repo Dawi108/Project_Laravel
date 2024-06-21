@@ -29,6 +29,7 @@ class EducationController extends Controller
         $education->certificate_no = $request->certificate_no;
         $education->save();
 
-        return redirect()->route('welcome');
+        return redirect()->route('sprofile.show', ['rollno' => $education->rollno]);
+        // return redirect()->route('welcome');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Education;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use App\Events\StudentEvent;
@@ -34,7 +35,7 @@ class StudentController extends Controller
         $request->validate([
             'rollno' => ['required', 'string', 'max:255'],
             'Fname' => ['required', 'string'],
-            'Mname' => ['required', 'string'],
+            'Mname' => ['nullable', 'string'],
             'Lname' => ['required', 'string'],
             // 'dob' => ['required', 'day', 'month', 'year'],
             'year' => ['required', 'numeric', 'min:1950', 'max:' . date('Y')],
@@ -87,5 +88,16 @@ class StudentController extends Controller
 
 
         return redirect()->route('education'); 
+    }
+    public function show($rollno)
+    {
+        $student = Student::where('rollno', $rollno)->first();
+        if (!$student) {
+            abort(404, 'Student not found');
+        }
+        
+        $education = Education::where('rollno', $rollno)->get();
+
+        return view('sprofile', compact('student', 'education'));
     }
 }
