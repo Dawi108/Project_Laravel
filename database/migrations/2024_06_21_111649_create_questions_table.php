@@ -17,7 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->string('question_paper');
             $table->enum('term', ['mid_term', 'end_term']);
-            $table->string('file_path'); // Assuming you store the file path
+            $table->longText('file_content'); // Add this line
             $table->timestamps();
         });
     }
@@ -32,3 +32,4 @@ class CreateQuestionsTable extends Migration
         Schema::dropIfExists('questions');
     }
 }
+

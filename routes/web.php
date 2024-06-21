@@ -98,3 +98,7 @@ Route::post('/administrator/store', [PublicationController::class, 'store'])->na
 
 Route::get('/sprofile/{rollno}', [StudentController::class, 'show'])->name('sprofile.show');
 
+// Add a route in your routes file
+Route::get('/questions/{id}/download', [FQuestionController::class, 'download'])->name('questions.download');
+
+

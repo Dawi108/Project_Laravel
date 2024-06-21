@@ -33,8 +33,8 @@
                 </select>
             </div>
             <div class="mb-4">
-                <label for="file" class="block text-white font-bold mb-2">Upload File (PDF, JPG, PNG)</label>
-                <input type="file" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" id="file" name="file" accept=".pdf,.jpg,.jpeg,.png" required>
+                <label for="file_content" class="block text-white font-bold mb-2">Upload File (PDF, JPG, PNG)</label>
+                <input type="file" class="form-input border border-gray-600 rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" id="file_content" name="file_content" accept=".pdf,.jpg,.jpeg,.png" required>
             </div>
             </div>
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
