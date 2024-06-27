@@ -8,7 +8,8 @@ use App\Http\Controllers\Auth\FacultyController;
 use App\Http\Controllers\Auth\PublicationController;
 use App\Http\Controllers\Auth\BookController;
 use App\Http\Controllers\Auth\FQuestionController;
-
+use App\Http\Controllers\Auth\AdministratorController;
+use App\Http\Controllers\Auth\DeoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +73,12 @@ Route::get('/fquestion', function () {
 Route::get('fquestion/create', [FQuestionController::class, 'create'])->name('fquestion.create');
 Route::post('/fquestion/store', [FQuestionController::class, 'store'])->name('fquestion.store');
 
+Route::middleware(['auth'])->group(function () {
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+});
+Route::patch('/students/{id}/approve', [StudentController::class, 'approve'])->name('students.approve');
+
+
 Route::get('/book', function () {
     return view('auth.book');
 })->name('book');
@@ -83,17 +90,8 @@ Route::post('/books/store', [BookController::class, 'store'])->name('books.store
 Route::get('/publication', function () {
     return view('auth.publication');
 })->name('publication');
-
 Route::get('/publications/create', [PublicationController::class, 'create'])->name('publications.create');
 Route::post('/publications/store', [PublicationController::class, 'store'])->name('publications.store');
-
-
-Route::get('/administrator', function () {
-    return view('auth.administrator');
-})->name('administrator');
-
-Route::get('/administrator/create', [PublicationController::class, 'create'])->name('administrator.create');
-Route::post('/administrator/store', [PublicationController::class, 'store'])->name('administrator.store');
 
 
 Route::get('/sprofile/{rollno}', [StudentController::class, 'show'])->name('sprofile.show');
@@ -102,3 +100,15 @@ Route::get('/sprofile/{rollno}', [StudentController::class, 'show'])->name('spro
 Route::get('/questions/{id}/download', [FQuestionController::class, 'download'])->name('questions.download');
 
 
+Route::get('/administrator', function () {
+    return view('auth.administrator');
+})->name('administrator');
+Route::get('/administrator/create', [App\Http\Controllers\AdministratorController::class, 'create'])->name('administrator.create');
+Route::post('/administrator/store', [App\Http\Controllers\AdministratorController::class, 'store'])->name('administrator.store');
+
+
+Route::get('/deo', function () {
+    return view('auth.deo');
+})->name('deo');
+Route::get('/deo/create', [DeoController::class, 'create'])->name('deo.create');
+Route::post('/deo/store', [DeoController::class, 'store'])->name('deo.store');

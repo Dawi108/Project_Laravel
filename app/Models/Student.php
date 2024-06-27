@@ -30,5 +30,8 @@ class Student extends Model
 
     protected $dates = ['dob']; // Define columns that should be treated as dates
 
-    // Define any relationships if needed
+    public function educations()
+    {
+        return $this->hasMany(Education::class, 'rollno', 'rollno');
+    }
 }

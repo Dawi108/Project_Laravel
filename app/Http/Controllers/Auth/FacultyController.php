@@ -39,7 +39,7 @@ class FacultyController extends Controller
         $faculty->specialization = $request->specialization;
         $faculty->save();
 
-        return redirect()->route('welcome');
+        return redirect()->route('fquestion');
     }
     public function index()
     {

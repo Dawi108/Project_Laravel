@@ -1,3 +1,4 @@
+
 <x-guest-layout>
     <div class="container mx-auto mt-10 p-5 bg-gray-800 rounded-lg shadow-lg">
         <h1 class="text-3xl font-bold text-white mb-5">Create Faculty</h1>

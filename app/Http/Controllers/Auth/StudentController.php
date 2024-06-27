@@ -18,6 +18,11 @@ class StudentController extends Controller
      *
      * @return \Illuminate\View\View
      */
+    public function index()
+    {
+        $students = Student::with('educations')->get();
+        return view('students.index', compact('students'));
+    }
     public function create(): View
     {
         return view('auth.student');
@@ -37,7 +42,6 @@ class StudentController extends Controller
             'Fname' => ['required', 'string'],
             'Mname' => ['nullable', 'string'],
             'Lname' => ['required', 'string'],
-            // 'dob' => ['required', 'day', 'month', 'year'],
             'year' => ['required', 'numeric', 'min:1950', 'max:' . date('Y')],
             'month' => ['required', 'numeric', 'min:1', 'max:12'],
             'day' => ['required', 'numeric', 'min:1', 'max:31'],
