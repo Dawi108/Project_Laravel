@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Administrator extends Model
+class Deo extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'file_path',
-    ];
+    protected $fillable = ['file_path'];
 }

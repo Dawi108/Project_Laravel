@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Administrator; // Assuming you have an Administrator model
+use App\Models\Deo; 
 use Illuminate\Support\Facades\Storage;
 
 class DeoController extends Controller
@@ -14,22 +15,18 @@ class DeoController extends Controller
         return view('deo.create');
     }
 
-    // Handle the form submission to store a new entry
     public function store(Request $request)
     {
-        // Validate the request data
         $validated = $request->validate([
-            'file_content' => ['required', 'file', 'mimes:pdf,jpg,jpeg,png', 'max:2048'],
+            'file_content' => ['required', 'file', 'mimes:pdf,jpg,jpeg,png'],
         ]);
 
-        // Store the file and get its path
         $path = $request->file('file_content')->store('notices');
 
-        // Create a new Administrator entry
-        $administrator = new Administrator();
-        $administrator->file_path = $path;
-        $administrator->save();
+        $deo = new Deo();
+        $deo->file_path = $path;
+        $deo->save();
 
-        return redirect()->route('deo.create')->with('success', 'File uploaded successfully.');
+        return redirect()->route('welcome');
     }
 }

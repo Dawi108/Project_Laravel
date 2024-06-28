@@ -14,5 +14,5 @@ class Administrator extends Model
         'courses',
     ];
 
-    protected $table = 'administrators';
+    protected $table = 'administrator';
 }

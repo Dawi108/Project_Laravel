@@ -103,8 +103,8 @@ Route::get('/questions/{id}/download', [FQuestionController::class, 'download'])
 Route::get('/administrator', function () {
     return view('auth.administrator');
 })->name('administrator');
-Route::get('/administrator/create', [App\Http\Controllers\AdministratorController::class, 'create'])->name('administrator.create');
-Route::post('/administrator/store', [App\Http\Controllers\AdministratorController::class, 'store'])->name('administrator.store');
+Route::get('/administrator/create', [AdministratorController::class, 'create'])->name('administrator.create');
+Route::post('/administrator/store', [AdministratorController::class, 'store'])->name('administrator.store');
 
 
 Route::get('/deo', function () {

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDeoTable extends Migration
+class CreateDeosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateDeoTable extends Migration
     {
         Schema::create('deos', function (Blueprint $table) {
             $table->id();
-            $table->string('file_path'); // Path to the uploaded file
+            $table->string('file_path'); // Path to the stored file
             $table->timestamps();
         });
     }
@@ -30,4 +30,3 @@ class CreateDeoTable extends Migration
         Schema::dropIfExists('deos');
     }
 }
-
