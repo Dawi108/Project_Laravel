@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\BookController;
 use App\Http\Controllers\Auth\FQuestionController;
 use App\Http\Controllers\Auth\AdministratorController;
 use App\Http\Controllers\Auth\DeoController;
-
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -112,3 +112,11 @@ Route::get('/deo', function () {
 })->name('deo');
 Route::get('/deo/create', [DeoController::class, 'create'])->name('deo.create');
 Route::post('/deo/store', [DeoController::class, 'store'])->name('deo.store');
+
+Route::get('/export', function () {
+    return view('auth.export');
+})->name('export');
+Route::get('/pdf/student_education', [PdfController::class, 'studentEducation'])->name('pdf.student_education');
+Route::get('/pdf/faculty', [PdfController::class, 'faculty'])->name('pdf.faculty');
+Route::get('/pdf/publication', [PdfController::class, 'publication'])->name('pdf.publication');
+Route::get('/pdf/book', [PdfController::class, 'book'])->name('pdf.book');
